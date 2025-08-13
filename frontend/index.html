@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker 🌤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ Mood Tracker</h1>
+            <p>Track your mood with the weather</p>
+        </header>
+
+        <!-- Weather Display -->
+        <div class="weather-widget">
+            <div id="weather-info">
+                <span id="weather-loading">Getting weather...</span>
+            </div>
+        </div>
+
+        <!-- Mood Entry Form -->
+        <div class="mood-form-section">
+            <h2>How are you feeling?</h2>
+            
+            <form id="mood-form" class="mood-form">
+                <div class="mood-buttons">
+                    <button type="button" class="mood-btn" data-mood="happy">😊<br>Happy</button>
+                    <button type="button" class="mood-btn" data-mood="excited">🤩<br>Excited</button>
+                    <button type="button" class="mood-btn" data-mood="neutral">😐<br>Neutral</button>
+                    <button type="button" class="mood-btn" data-mood="sad">😢<br>Sad</button>
+                    <button type="button" class="mood-btn" data-mood="stressed">😰<br>Stressed</button>
+                </div>
+                
+                <div class="note-section">
+                    <textarea 
+                        id="mood-note" 
+                        placeholder="Add a note about your mood (optional)..."
+                        rows="3"
+                    ></textarea>
+                </div>
+                
+                <button type="submit" id="submit-btn" class="submit-btn" disabled>
+                    Log My Mood
+                </button>
+            </form>
+        </div>
+
+        <!-- Mood History -->
+        <div class="mood-history-section">
+            <h2>Recent Moods</h2>
+            <div id="mood-history" class="mood-history">
+                <div id="history-loading">Loading your mood history...</div>
+            </div>
+        </div>
+
+        <!-- Simple Stats -->
+        <div class="stats-section">
+            <h2>This Week</h2>
+            <div id="mood-stats" class="mood-stats">
+                <div class="stat-item">
+                    <span class="stat-emoji">😊</span>
+                    <span class="stat-count" id="happy-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-emoji">🤩</span>
+                    <span class="stat-count" id="excited-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-emoji">😐</span>
+                    <span class="stat-count" id="neutral-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-emoji">😢</span>
+                    <span class="stat-count" id="sad-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-emoji">😰</span>
+                    <span class="stat-count" id="stressed-count">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

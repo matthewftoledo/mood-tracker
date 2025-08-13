@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Data files
+backend/data/moods.json
+
+# Environment variables
+.env
+.env.local
+
+# MacOS
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
