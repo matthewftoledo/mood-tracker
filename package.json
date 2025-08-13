@@ -1,13 +1,18 @@
 {
-  "name": "mood-tracker",
+  "name": "mood-tracker-backend",
   "version": "1.0.0",
-  "description": "Mood tracker with weather integration",
-  "main": "backend/server.js",
+  "description": "Backend for mood tracker with weather integration",
+  "main": "server.js",
   "scripts": {
-    "start": "cd backend && npm install && npm start",
-    "build": "cd backend && npm install"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
-  "keywords": ["mood", "weather", "tracker"],
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.0"
+  },
+  "keywords": ["mood", "weather", "tracker", "express"],
   "author": "",
   "license": "MIT"
 }

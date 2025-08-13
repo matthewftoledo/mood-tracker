@@ -11,10 +11,9 @@ const WEATHER_API_KEY = process.env.WEATHER_API_KEY || 'c7b21779cc01494514d8c658
 // Middleware
 app.use(cors());
 app.use(express.json());
-// Serve static files from frontend directory
-app.use(express.static(path.join(__dirname, '../frontend')));
-app.use(express.static(path.join(process.cwd(), 'frontend')));
-app.use(express.static('frontend'));
+// Serve static files from root directory
+app.use(express.static(__dirname));
+app.use(express.static('.'));
 
 // Data file path
 const MOODS_FILE = path.join(__dirname, 'data', 'moods.json');
@@ -130,7 +129,7 @@ app.post('/api/moods', async (req, res) => {
 
 // Serve frontend
 app.get('/', (req, res) => {
-  const indexPath = path.join(__dirname, '../frontend', 'index.html');
+  const indexPath = path.join(__dirname, 'index.html');
   console.log('Serving index.html from:', indexPath);
   res.sendFile(indexPath, (err) => {
     if (err) {
@@ -145,7 +144,7 @@ app.get('*', (req, res) => {
   if (req.path.startsWith('/api/')) {
     res.status(404).json({ error: 'API endpoint not found' });
   } else {
-    const indexPath = path.join(__dirname, '../frontend', 'index.html');
+    const indexPath = path.join(__dirname, 'index.html');
     res.sendFile(indexPath, (err) => {
       if (err) {
         res.status(500).send('Could not load application');
